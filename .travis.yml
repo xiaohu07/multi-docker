@@ -11,13 +11,13 @@ script:
 
 
 after_success:
-  - docker build -t xiaohu07/multi-client ./client
+#  - docker build -t xiaohu07/multi-client ./client
   - docker build -t xiaohu07/multi-nginx ./nginx
   - docker build -t xiaohu07/multi-server ./server
   - docker build -t xiaohu07/multi-worker ./worker
     # Login into docker cli
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-  - docker push xiaohu07/multi-client
+#  - docker push xiaohu07/multi-client
   - docker push xiaohu07/multi-nginx
   - docker push xiaohu07/multi-server
   - docker push xiaohu07/multi-worker
